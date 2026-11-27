@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Задолбали</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #2c1810, #1a0f0a);
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #fff;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+  }
+  .message {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    line-height: 1.5;
+    max-width: 600px;
+    background: rgba(0,0,0,0.5);
+    padding: 30px;
+    border-radius: 20px;
+    border: 3px solid #8B4513;
+    box-shadow: 0 0 30px rgba(139,69,19,0.5);
+    z-index: 10;
+    position: relative;
+  }
+  .poop {
+    font-size: 4rem;
+    position: absolute;
+    animation: float 3s ease-in-out infinite;
+  }
+  .poop1 { top: 10%; left: 10%; animation-delay: 0s; }
+  .poop2 { top: 20%; right: 15%; animation-delay: 0.5s; }
+  .poop3 { bottom: 15%; left: 20%; animation-delay: 1s; }
+  .poop4 { bottom: 25%; right: 10%; animation-delay: 1.5s; }
+  .poop5 { top: 50%; left: 5%; animation-delay: 2s; }
+  .poop6 { top: 40%; right: 5%; animation-delay: 2.5s; }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+  }
+  
+  .stink {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.7;
+    animation: stink-rise 2s ease-out infinite;
+  }
+  .stink1 { top: 15%; left: 12%; animation-delay: 0s; }
+  .stink2 { top: 25%; right: 17%; animation-delay: 0.4s; }
+  .stink3 { bottom: 20%; left: 22%; animation-delay: 0.8s; }
+  .stink4 { bottom: 30%; right: 12%; animation-delay: 1.2s; }
+  
+  @keyframes stink-rise {
+    0% { transform: translateY(0) scale(1); opacity: 0.8; }
+    100% { transform: translateY(-80px) scale(1.5); opacity: 0; }
+  }
+  
+  .big-poop {
+    font-size: 8rem;
+    margin: 20px 0;
+    animation: bounce 1s ease-in-out infinite, shake 0.5s ease-in-out infinite;
+    display: inline-block;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+  }
+  
+  .smell-lines {
+    position: relative;
+    display: inline-block;
+  }
+  .smell-lines::before,
+  .smell-lines::after {
+    content: '〰️';
+    position: absolute;
+    font-size: 1.5rem;
+    color: #90EE90;
+    animation: wiggle 1.5s ease-in-out infinite;
+  }
+  .smell-lines::before {
+    top: -30px;
+    left: -20px;
+  }
+  .smell-lines::after {
+    top: -40px;
+    right: -20px;
+    animation-delay: 0.3s;
+  }
+  
+  @keyframes wiggle {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+    50% { transform: translateY(-10px) rotate(10deg); opacity: 1; }
+  }
+</style>
+</head>
+<body>
+  <div class="poop poop1">💩</div>
+  <div class="poop poop2">💩</div>
+  <div class="poop poop3">💩</div>
+  <div class="poop poop4">💩</div>
+  <div class="poop poop5">💩</div>
+  <div class="poop poop6">💩</div>
+  
+  <div class="stink stink1">💨</div>
+  <div class="stink stink2">💨</div>
+  <div class="stink stink3">💨</div>
+  <div class="stink stink4">💨</div>
+  
+  <div class="message">
+    <div class="smell-lines">
+      <span class="big-poop">💩</span>
+    </div>
+    <p>Задолбали, делайте всё сами, я задолбался, 10 минут всё переделывать, там смайлики, какашек и анимация воняющего говна</p>
+    <div style="margin-top: 20px; font-size: 2rem;">
+      💩 💨 💩 💨 💩
+    </div>
+  </div>
+</body>
+</html>
